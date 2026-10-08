@@ -1,0 +1,34 @@
+name: Índice de números
+
+# Make sube cada número aprobado a numeros/. Esto rehace numeros/index.json,
+# que es lo que lista la portada.
+on:
+  push:
+    branches: [main]
+    paths: ["numeros/*.html"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: indice
+  cancel-in-progress: false
+
+jobs:
+  indice:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/indice.py
+      - name: Publicar
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add numeros/index.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Índice de números actualizado"
+          git push

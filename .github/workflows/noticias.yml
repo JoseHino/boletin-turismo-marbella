@@ -1,0 +1,35 @@
+name: Noticias del boletín
+
+# Los RSS solo guardan los últimos días: cada mañana se añade lo nuevo a
+# datos/noticias.json (ventana de 40 días), que es lo que lee Make al redactar.
+on:
+  schedule:
+    - cron: "15 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datos
+  cancel-in-progress: false
+
+jobs:
+  noticias:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/noticias.py
+      - name: Publicar
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos/noticias.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Noticias $(date -u +%Y-%m-%d)"
+          git pull --rebase
+          git push

@@ -1,0 +1,212 @@
+{
+ "generado": "2026-10-08T12:52:17Z",
+ "periodo": "2026-08",
+ "periodo_texto": "agosto de 2026",
+ "indicadores": [
+  {
+   "id": "pernoctaciones_hotel",
+   "nombre": "Pernoctaciones en hoteles",
+   "valor": 346352.0,
+   "valor_texto": "346.352",
+   "variacion": -1.15,
+   "variacion_texto": "−1,1 %",
+   "comparado_con": "ago 2025",
+   "tendencia": "baja",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · EOH",
+   "nota": ""
+  },
+  {
+   "id": "viajeros_hotel",
+   "nombre": "Viajeros alojados en hoteles",
+   "valor": 83817.0,
+   "valor_texto": "83.817",
+   "variacion": -0.57,
+   "variacion_texto": "−0,6 %",
+   "comparado_con": "ago 2025",
+   "tendencia": "baja",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · EOH",
+   "nota": ""
+  },
+  {
+   "id": "ocupacion_hab",
+   "nombre": "Ocupación hotelera (habitaciones)",
+   "valor": 84.6,
+   "valor_texto": "84,6 %",
+   "variacion": 2.03,
+   "variacion_texto": "+2,0 p. p.",
+   "comparado_con": "ago 2025",
+   "tendencia": "sube",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · EOH",
+   "nota": ""
+  },
+  {
+   "id": "cuota_extranjero",
+   "nombre": "Pernoctaciones de extranjeros",
+   "valor": 81.36,
+   "valor_texto": "81,4 %",
+   "variacion": 2.8,
+   "variacion_texto": "+2,8 p. p.",
+   "comparado_con": "ago 2025",
+   "tendencia": "sube",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · EOH",
+   "nota": "Peso sobre el total de pernoctaciones hoteleras"
+  },
+  {
+   "id": "adr",
+   "nombre": "Tarifa media diaria (ADR)",
+   "valor": 377.8,
+   "valor_texto": "377,80 €",
+   "variacion": 2.27,
+   "variacion_texto": "+2,3 %",
+   "comparado_con": "ago 2025",
+   "tendencia": "sube",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · IRSH",
+   "nota": ""
+  },
+  {
+   "id": "revpar",
+   "nombre": "Ingreso por habitación disponible (RevPAR)",
+   "valor": 321.82,
+   "valor_texto": "321,82 €",
+   "variacion": 6.71,
+   "variacion_texto": "+6,7 %",
+   "comparado_con": "ago 2025",
+   "tendencia": "sube",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · IRSH",
+   "nota": ""
+  },
+  {
+   "id": "estancia",
+   "nombre": "Estancia media en hoteles",
+   "valor": 4.13,
+   "valor_texto": "4,13 días",
+   "variacion": -0.03,
+   "variacion_texto": "−0,03 días",
+   "comparado_con": "ago 2025",
+   "tendencia": "igual",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · EOH",
+   "nota": ""
+  },
+  {
+   "id": "empleo_hotel",
+   "nombre": "Personal empleado en hoteles",
+   "valor": 5688.0,
+   "valor_texto": "5.688",
+   "variacion": 28.34,
+   "variacion_texto": "+28,3 %",
+   "comparado_con": "ago 2025",
+   "tendencia": "sube",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · EOH",
+   "nota": ""
+  },
+  {
+   "id": "pernoctaciones_apt",
+   "nombre": "Pernoctaciones en apartamentos turísticos",
+   "valor": 93273.0,
+   "valor_texto": "93.273",
+   "variacion": -8.73,
+   "variacion_texto": "−8,7 %",
+   "comparado_con": "ago 2025",
+   "tendencia": "baja",
+   "periodo": "2026-08",
+   "periodo_texto": "agosto de 2026",
+   "provisional": true,
+   "fuente": "INE · EOAP",
+   "nota": ""
+  },
+  {
+   "id": "pasajeros_agp",
+   "nombre": "Pasajeros en el aeropuerto de Málaga",
+   "valor": 2072711,
+   "valor_texto": "2.072.711",
+   "variacion": 9.44,
+   "variacion_texto": "+9,4 %",
+   "comparado_con": "mar 2025",
+   "tendencia": "sube",
+   "periodo": "2026-03",
+   "periodo_texto": "marzo de 2026",
+   "provisional": false,
+   "fuente": "Eurostat · avia_paoa",
+   "nota": ""
+  }
+ ],
+ "mercados": {
+  "periodo": "2026-05",
+  "periodo_texto": "mayo de 2026",
+  "fuente": "Turismo Costa del Sol · Big Data (microdato EOH)",
+  "lista": [
+   {
+    "pais": "Reino Unido",
+    "pernoctaciones": 101727,
+    "texto": "101.727",
+    "variacion": 12.9,
+    "variacion_texto": "+12,9 %"
+   },
+   {
+    "pais": "Alemania",
+    "pernoctaciones": 25979,
+    "texto": "25.979",
+    "variacion": 61.2,
+    "variacion_texto": "+61,2 %"
+   },
+   {
+    "pais": "Irlanda",
+    "pernoctaciones": 23941,
+    "texto": "23.941",
+    "variacion": 30.4,
+    "variacion_texto": "+30,4 %"
+   },
+   {
+    "pais": "Países Bajos",
+    "pernoctaciones": 20016,
+    "texto": "20.016",
+    "variacion": 9.7,
+    "variacion_texto": "+9,7 %"
+   },
+   {
+    "pais": "Francia",
+    "pernoctaciones": 17683,
+    "texto": "17.683",
+    "variacion": -5.8,
+    "variacion_texto": "−5,8 %"
+   }
+  ]
+ },
+ "vut": {
+  "total": 15775,
+  "total_texto": "15.775",
+  "plazas": 92110,
+  "plazas_texto": "92.110",
+  "altas_12_meses": 778,
+  "altas_12_meses_texto": "778",
+  "fecha": "2026-10-08",
+  "fuente": "Junta de Andalucía · Registro de Turismo (VUT)"
+ },
+ "observatorio": "https://josehino.github.io/observatorio-turistico-marbella/",
+ "texto": "Último mes del INE para Marbella: agosto de 2026.\n- Pernoctaciones en hoteles (agosto de 2026): 346.352 (−1,1 % vs. ago 2025) [provisional]\n- Viajeros alojados en hoteles (agosto de 2026): 83.817 (−0,6 % vs. ago 2025) [provisional]\n- Ocupación hotelera (habitaciones) (agosto de 2026): 84,6 % (+2,0 p. p. vs. ago 2025) [provisional]\n- Pernoctaciones de extranjeros (agosto de 2026): 81,4 % (+2,8 p. p. vs. ago 2025) [provisional]\n- Tarifa media diaria (ADR) (agosto de 2026): 377,80 € (+2,3 % vs. ago 2025) [provisional]\n- Ingreso por habitación disponible (RevPAR) (agosto de 2026): 321,82 € (+6,7 % vs. ago 2025) [provisional]\n- Estancia media en hoteles (agosto de 2026): 4,13 días (−0,03 días vs. ago 2025) [provisional]\n- Personal empleado en hoteles (agosto de 2026): 5.688 (+28,3 % vs. ago 2025) [provisional]\n- Pernoctaciones en apartamentos turísticos (agosto de 2026): 93.273 (−8,7 % vs. ago 2025) [provisional]\n- Pasajeros en el aeropuerto de Málaga (marzo de 2026): 2.072.711 (+9,4 % vs. mar 2025)\nMercados internacionales (mayo de 2026): Reino Unido 101.727 (+12,9 %); Alemania 25.979 (+61,2 %); Irlanda 23.941 (+30,4 %); Países Bajos 20.016 (+9,7 %); Francia 17.683 (−5,8 %)\nViviendas turísticas inscritas: 15.775 (778 altas en 12 meses).",
+ "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Pernoctaciones en hoteles (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">346.352</div><div style=\"font-size:12px;line-height:1.4;color:#C2502F;margin-top:3px;\">&#9660; −1,1 % <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Viajeros alojados en hoteles (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">83.817</div><div style=\"font-size:12px;line-height:1.4;color:#C2502F;margin-top:3px;\">&#9660; −0,6 % <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td></tr><tr><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Ocupación hotelera (habitaciones) (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">84,6 %</div><div style=\"font-size:12px;line-height:1.4;color:#0E7C86;margin-top:3px;\">&#9650; +2,0 p. p. <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Pernoctaciones de extranjeros (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">81,4 %</div><div style=\"font-size:12px;line-height:1.4;color:#0E7C86;margin-top:3px;\">&#9650; +2,8 p. p. <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td></tr><tr><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Tarifa media diaria (ADR) (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">377,80 €</div><div style=\"font-size:12px;line-height:1.4;color:#0E7C86;margin-top:3px;\">&#9650; +2,3 % <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Ingreso por habitación disponible (RevPAR) (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">321,82 €</div><div style=\"font-size:12px;line-height:1.4;color:#0E7C86;margin-top:3px;\">&#9650; +6,7 % <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td></tr><tr><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Estancia media en hoteles (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">4,13 días</div><div style=\"font-size:12px;line-height:1.4;color:#5B6B7A;margin-top:3px;\">&#9644; −0,03 días <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Personal empleado en hoteles (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">5.688</div><div style=\"font-size:12px;line-height:1.4;color:#0E7C86;margin-top:3px;\">&#9650; +28,3 % <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td></tr><tr><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Pernoctaciones en apartamentos turísticos (prov.)</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">93.273</div><div style=\"font-size:12px;line-height:1.4;color:#C2502F;margin-top:3px;\">&#9660; −8,7 % <span style=\"color:#5B6B7A;\">vs. ago 2025</span></div></td></tr></table></td><td width=\"50%\" valign=\"top\" style=\"padding:5px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F3F6F8;border-radius:10px;border-collapse:separate;\"><tr><td style=\"padding:14px 16px;font-family:Arial,Helvetica,sans-serif;\"><div style=\"font-size:11px;line-height:1.35;color:#5B6B7A;text-transform:uppercase;letter-spacing:.04em;\">Pasajeros en el aeropuerto de Málaga · mar 2026</div><div style=\"font-size:24px;line-height:1.2;font-weight:700;color:#0B2F4E;margin-top:5px;\">2.072.711</div><div style=\"font-size:12px;line-height:1.4;color:#0E7C86;margin-top:3px;\">&#9650; +9,4 % <span style=\"color:#5B6B7A;\">vs. mar 2025</span></div></td></tr></table></td></tr></table><div style=\"font:700 14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;margin:18px 5px 6px;\">Principales mercados internacionales · mayo de 2026</div><div style=\"font:12px/1.4 Arial,Helvetica,sans-serif;color:#5B6B7A;margin:0 5px 6px;\">Pernoctaciones en hoteles y apartamentos y variación interanual</div><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;margin:0 0 4px;\"><tr><td style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">1. Reino Unido</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">101.727</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:13px/1.4 Arial,Helvetica,sans-serif;color:#0E7C86;\">+12,9 %</td></tr><tr><td style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">2. Alemania</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">25.979</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:13px/1.4 Arial,Helvetica,sans-serif;color:#0E7C86;\">+61,2 %</td></tr><tr><td style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">3. Irlanda</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">23.941</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:13px/1.4 Arial,Helvetica,sans-serif;color:#0E7C86;\">+30,4 %</td></tr><tr><td style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">4. Países Bajos</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">20.016</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:13px/1.4 Arial,Helvetica,sans-serif;color:#0E7C86;\">+9,7 %</td></tr><tr><td style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">5. Francia</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:14px/1.4 Arial,Helvetica,sans-serif;color:#0B2F4E;\">17.683</td><td align=\"right\" style=\"padding:7px 10px;border-bottom:1px solid #E3E8EC;font:13px/1.4 Arial,Helvetica,sans-serif;color:#C2502F;\">−5,8 %</td></tr></table><div style=\"font:14px/1.55 Arial,Helvetica,sans-serif;color:#24323F;margin:16px 5px 0;\"><strong style=\"color:#0B2F4E;\">Viviendas turísticas:</strong> 15.775 inscritas en el Registro de Turismo de Andalucía (92.110 plazas); 778 altas en los últimos doce meses.</div><div style=\"font:12px/1.5 Arial,Helvetica,sans-serif;color:#5B6B7A;margin:14px 5px 0;\">Fuentes: INE (EOH, IRSH, EOAP), Turismo Costa del Sol, Junta de Andalucía y Eurostat. Datos de agosto de 2026 salvo que se indique otro mes. <a href=\"https://josehino.github.io/observatorio-turistico-marbella/\" style=\"color:#0E7C86;font-weight:600;\">Ver el Observatorio Turístico</a></div>"
+}

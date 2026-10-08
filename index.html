@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boletín profesional · Turismo de Marbella</title>
+<meta name="description" content="Datos, noticias y oportunidades para el sector turístico de Marbella. Suscripción y números publicados.">
+<style>
+  :root{
+    --azul:#0B2F4E; --turquesa:#0E7C86; --coral:#C2502F; --arena:#F6F1EA;
+    --texto:#24323F; --gris:#5B6B7A; --linea:#E3E8EC; --tarjeta:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--arena);color:var(--texto);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  a{color:var(--turquesa)}
+  .envoltura{max-width:980px;margin:0 auto;padding:0 16px}
+  header{background:var(--azul);color:#fff;padding:40px 0 34px}
+  .antetitulo{font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#7FD1D7}
+  h1{font:700 clamp(30px,5vw,44px)/1.15 Georgia,"Times New Roman",serif;margin:10px 0 8px}
+  header p{margin:0;color:#C9D6E2;max-width:620px}
+  main{padding:28px 0 40px}
+  .rejilla{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px;align-items:start}
+  @media (max-width:760px){.rejilla{grid-template-columns:1fr}}
+  .caja{background:var(--tarjeta);border-radius:14px;padding:22px 22px 18px;box-shadow:0 1px 2px rgba(11,47,78,.06)}
+  h2{font:700 21px/1.3 Georgia,"Times New Roman",serif;color:var(--azul);margin:0 0 6px}
+  .sub{color:var(--gris);font-size:14px;margin:0 0 16px}
+  .numero{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--linea);padding:14px 2px}
+  .numero:first-of-type{border-top:0}
+  .numero:hover .titulo{color:var(--turquesa)}
+  .meta{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+  .titulo{font-weight:700;color:var(--azul);margin:2px 0 3px}
+  .resumen{font-size:14px;color:var(--gris);margin:0}
+  .prueba{display:inline-block;margin-left:6px;padding:0 6px;border-radius:5px;background:#FBE9E3;color:var(--coral);font-size:11px}
+  .vacio{color:var(--gris);font-size:15px;padding:8px 0}
+  .lista{list-style:none;padding:0;margin:0 0 16px}
+  .lista li{padding-left:22px;position:relative;margin:0 0 8px;font-size:15px}
+  .lista li::before{content:"";position:absolute;left:4px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--coral)}
+  .boton{display:inline-block;background:var(--turquesa);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px}
+  .boton:hover{background:#0B6870}
+  .aviso{background:#F3F6F8;border-radius:10px;padding:12px 14px;font-size:14px;color:var(--gris)}
+  .legal{font-size:12px;line-height:1.55;color:var(--gris);margin-top:16px;border-top:1px solid var(--linea);padding-top:12px}
+  .legal p{margin:0 0 6px}
+  footer{font-size:13px;color:var(--gris);padding:0 0 34px}
+  /* Para incrustarlo en la web de Turismo: ?embed=1 quita cabecera y pie */
+  body.embed header, body.embed footer{display:none}
+  body.embed main{padding-top:4px}
+  body.embed{background:transparent}
+</style>
+</head>
+<body>
+<header>
+  <div class="envoltura">
+    <div class="antetitulo">Turismo · Ayuntamiento de Marbella</div>
+    <h1>Boletín profesional</h1>
+    <p>Datos, noticias y oportunidades para el sector turístico de Marbella, cada mes en tu correo.</p>
+  </div>
+</header>
+
+<main class="envoltura">
+  <div class="rejilla">
+    <section class="caja" aria-labelledby="t-numeros">
+      <h2 id="t-numeros">Números publicados</h2>
+      <p class="sub">Todos los boletines enviados, también para consultarlos sin suscribirse.</p>
+      <div id="numeros"><div class="vacio">Cargando…</div></div>
+    </section>
+
+    <section class="caja" id="suscripcion" aria-labelledby="t-susc">
+      <h2 id="t-susc">Suscríbete</h2>
+      <p class="sub">Para empresas y profesionales del turismo de Marbella.</p>
+      <ul class="lista">
+        <li>Las cifras del mes del Observatorio Turístico: ocupación, tarifas y mercados.</li>
+        <li>Actualidad de la Delegación de Turismo y del sector.</li>
+        <li>Agenda, ferias, ayudas y formación.</li>
+      </ul>
+      <div id="formulario"></div>
+      <div class="legal">
+        <p><strong>Protección de datos.</strong> Responsable: Ayuntamiento de Marbella (Delegación de Turismo). Finalidad: enviarte el boletín profesional. Legitimación: tu consentimiento, que puedes retirar en cualquier momento con el enlace de baja de cada envío. Destinatarios: Brevo (Sendinblue SAS, Unión Europea), como encargado del tratamiento. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad ante el Ayuntamiento de Marbella<span id="privacidad"></span>.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="envoltura">
+  Delegación de Turismo · Ayuntamiento de Marbella ·
+  <a href="https://josehino.github.io/observatorio-turistico-marbella/">Observatorio Turístico de Marbella</a>
+</footer>
+
+<script>
+// ── Configuración ─────────────────────────────────────────────────────────
+// BREVO_FORM: enlace del formulario de Brevo (Contactos > Formularios > Compartir).
+// PRIVACIDAD: página de protección de datos del Ayuntamiento (la indica su DPD).
+const BREVO_FORM = "";
+const PRIVACIDAD = "";
+
+const q = new URLSearchParams(location.search);
+if (q.get("embed") === "1") document.body.classList.add("embed");
+const verPruebas = q.get("pruebas") === "1";
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+document.getElementById("formulario").innerHTML = BREVO_FORM
+  ? `<a class="boton" href="${esc(BREVO_FORM)}" target="_blank" rel="noopener">Quiero recibir el boletín</a>`
+  : `<div class="aviso">La suscripción se abrirá en cuanto esté activo el envío desde Brevo.</div>`;
+if (PRIVACIDAD) document.getElementById("privacidad").innerHTML = `: <a href="${esc(PRIVACIDAD)}">más información</a>`;
+
+fetch("numeros/index.json", {cache: "no-store"})
+  .then(r => r.ok ? r.json() : [])
+  .then(lista => {
+    const n = (lista || []).filter(x => verPruebas || !x.prueba);
+    const caja = document.getElementById("numeros");
+    if (!n.length) { caja.innerHTML = `<div class="vacio">Aún no hay números publicados.</div>`; return; }
+    caja.innerHTML = n.map(x => `
+      <a class="numero" href="numeros/${encodeURIComponent(x.archivo)}">
+        <div class="meta">Nº ${esc(x.numero)} · ${esc(x.fecha)}${x.prueba ? '<span class="prueba">prueba</span>' : ""}</div>
+        <div class="titulo">${esc(x.asunto)}</div>
+        <p class="resumen">${esc(x.resumen)}</p>
+      </a>`).join("");
+  })
+  .catch(() => { document.getElementById("numeros").innerHTML = `<div class="vacio">No se han podido cargar los números.</div>`; })
+  .finally(avisarAltura);
+
+// Si la página va dentro de un iframe en la web de Turismo, le dice su altura
+function avisarAltura() {
+  if (window.parent !== window) parent.postMessage({boletinAltura: document.documentElement.scrollHeight}, "*");
+}
+addEventListener("load", avisarAltura);
+addEventListener("resize", avisarAltura);
+</script>
+</body>
+</html>

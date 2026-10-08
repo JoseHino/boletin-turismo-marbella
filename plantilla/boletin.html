@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="boletin:numero" content="%%NUMERO%%">
+<meta name="boletin:fecha" content="%%FECHA%%">
+<meta name="boletin:asunto" content="%%ASUNTO%%">
+<meta name="boletin:resumen" content="%%PREHEADER%%">
+<title>%%ASUNTO%%</title>
+<!--
+  Plantilla del Boletín profesional de Turismo de Marbella.
+  Make sustituye los %%MARCADORES%%. Todo va en tablas y con estilos en línea
+  porque es lo único que respetan Gmail, Outlook y el móvil a la vez.
+  %%AVISO%% es el recuadro de «borrador para aprobación» (solo en el correo a la directora).
+  Bloques alternativos:
+    BREVO  -> solo en el envío a los suscritos (enlaces de baja y versión web de Brevo)
+    WEB    -> en la copia que se publica en la web y en el borrador a la directora
+  Colores: azul #0B2F4E · turquesa #0E7C86 · coral #C2502F · arena #F6F1EA
+-->
+</head>
+<body style="margin:0;padding:0;background:#F6F1EA;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#F6F1EA;font-size:1px;line-height:1px;">%%PREHEADER%%&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F6F1EA;">
+<tr><td align="center" style="padding:24px 12px;">
+%%AVISO%%
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#FFFFFF;border-radius:14px;overflow:hidden;">
+
+  <!-- Cabecera -->
+  <tr><td style="background:#0B2F4E;padding:26px 30px 22px;">
+    <div style="font:700 12px/1.3 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#7FD1D7;text-transform:uppercase;">Turismo · Ayuntamiento de Marbella</div>
+    <div style="font:700 28px/1.2 Georgia,'Times New Roman',serif;color:#FFFFFF;margin-top:8px;">Boletín profesional</div>
+    <div style="font:14px/1.5 Arial,Helvetica,sans-serif;color:#C9D6E2;margin-top:6px;">Datos, noticias y oportunidades para el sector turístico de Marbella</div>
+    <div style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#C9D6E2;margin-top:14px;border-top:1px solid #23496B;padding-top:10px;">Nº %%NUMERO%% · %%FECHA%%</div>
+  </td></tr>
+
+  <!-- Editorial -->
+  <tr><td style="padding:26px 30px 6px;">
+    %%EDITORIAL%%
+  </td></tr>
+
+  <!-- Marbella en cifras (lo genera scripts/kpis.py; la IA no lo toca) -->
+  <tr><td style="padding:10px 25px 4px;">
+    <h2 style="margin:18px 5px 12px;font:700 20px/1.3 Georgia,'Times New Roman',serif;color:#0B2F4E;border-bottom:2px solid #C2502F;padding-bottom:6px;">Marbella en cifras</h2>
+    %%CIFRAS%%
+  </td></tr>
+
+  <!-- Secciones redactadas -->
+  <tr><td style="padding:6px 30px 24px;">
+    %%SECCIONES%%
+  </td></tr>
+
+  <!-- Pie -->
+  <tr><td style="background:#F3F6F8;padding:22px 30px;font:12px/1.6 Arial,Helvetica,sans-serif;color:#5B6B7A;">
+    <div style="font-weight:700;color:#0B2F4E;">Delegación de Turismo · Ayuntamiento de Marbella</div>
+    <div>Este boletín lo elabora la Delegación de Turismo con datos del <a href="https://josehino.github.io/observatorio-turistico-marbella/" style="color:#0E7C86;">Observatorio Turístico de Marbella</a> y noticias de fuentes públicas. Cada noticia enlaza a su fuente original.</div>
+    <!--BREVO-->
+    <div style="margin-top:10px;">¿No se ve bien? <a href="{{ mirror }}" style="color:#0E7C86;">Ábrelo en el navegador</a>. Recibes este boletín porque te suscribiste en la web de Turismo de Marbella. <a href="{{ unsubscribe }}" style="color:#0E7C86;">Darse de baja</a>.</div>
+    <!--/BREVO-->
+    <!--WEB-->
+    <div style="margin-top:10px;"><a href="%%WEB%%" style="color:#0E7C86;">Números anteriores y suscripción</a></div>
+    <!--/WEB-->
+  </td></tr>
+
+</table>
+
+</td></tr>
+</table>
+</body>
+</html>

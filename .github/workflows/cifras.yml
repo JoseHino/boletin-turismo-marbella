@@ -1,0 +1,58 @@
+name: Cifras del boletín
+
+# El INE publica la Encuesta de Ocupación Hotelera hacia el día 23 y Turismo
+# Costa del Sol actualiza el desglose por país el día 8 (lo recoge el
+# observatorio). El día 9 se rehacen las cifras y, si están configurados el
+# secreto BREVO_API_KEY y las variables MAILHOOK y REMITENTE, se pide a Make el
+# borrador del mes con un correo "GENERAR" al buzón del escenario.
+on:
+  schedule:
+    - cron: "0 6 9 * *"
+  workflow_dispatch:
+    inputs:
+      generar:
+        description: "Pedir también el borrador a Make"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datos
+  cancel-in-progress: false
+
+jobs:
+  cifras:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cifras del observatorio
+        run: python scripts/kpis.py
+
+      - name: Publicar si hay cambios
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos/kpis.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Cifras actualizadas $(date -u +%Y-%m-%d)"
+          git pull --rebase
+          git push
+
+      - name: Pedir el borrador a Make
+        if: ${{ (github.event_name == 'schedule' || inputs.generar) && vars.MAILHOOK != '' }}
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MAILHOOK: ${{ vars.MAILHOOK }}
+          REMITENTE: ${{ vars.REMITENTE }}
+        run: |
+          # Da tiempo a GitHub Pages a servir las cifras nuevas
+          sleep 90
+          curl -sS --fail -X POST https://api.brevo.com/v3/smtp/email \
+            -H "api-key: $BREVO_API_KEY" -H "Content-Type: application/json" \
+            -d "{\"sender\":{\"name\":\"Boletín Turismo Marbella\",\"email\":\"$REMITENTE\"},\"to\":[{\"email\":\"$MAILHOOK\"}],\"subject\":\"[Boletín Turismo Marbella] GENERAR\",\"textContent\":\"Borrador mensual automático.\"}"
