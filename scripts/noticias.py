@@ -35,7 +35,11 @@ import xml.etree.ElementTree as ET
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SALIDA = os.path.join(RAIZ, "datos", "noticias.json")
 DIAS = 40
-UA = {"User-Agent": "Mozilla/5.0 (boletin-turismo-marbella; +https://github.com/JoseHino/boletin-turismo-marbella)"}
+# Algunos medios (TecnoHotel) devuelven 403 a los servidores de GitHub si el
+# agente no parece un navegador
+UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/126.0 Safari/537.36",
+      "Accept": "application/rss+xml, application/xml, text/xml, text/html;q=0.9, */*;q=0.8"}
 
 MARBELLA_RSS = "https://www.marbella.es/actualidad/noticias.feed?type=rss&start={start}"
 MARBELLA_TURISMO = "https://www.marbella.es/temas/turismo.feed?type=rss"
