@@ -80,7 +80,12 @@ BOJA_TURISMO = re.compile(r"turism|tur[ií]stic|campings?|guías? de turismo", r
 BOJA_RUIDO = re.compile(r"registro de fundaciones|publicidad institucional|adjudicaci[oó]n|formalizaci[oó]n|"
                         r"contrato|arrendamiento|plazas?\b|selecci[oó]n|puestos? de trabajo|estatutos|s[ií]mbolos|"
                         r"nombra|oposici[oó]n|funcionari|autorizaci[oó]n ambiental|l[ií]nea delimitadora|"
-                        r"emplazamiento|recurso contencioso", re.I)
+                        r"emplazamiento|recurso contencioso|plan de estudios|entidades locales|"
+                        r"administraci[oó]n local", re.I)
+# El nombre de la consejería («de Turismo, Justicia, Desregulación y Administración
+# Local», antes «de Turismo, Regeneración, Justicia…») no cuenta como tema turístico
+NOMBRE_CONSEJERIA = re.compile(r"(Consejer[ií]a|Delegaci[oó]n Territorial|Viceconsejer[ií]a) de Turismo[^.;]*?"
+                               r"(?=, por | por |\.|;|$)", re.I)
 OTRA_PROVINCIA = re.compile(r"(Delegaci[oó]n Territorial[^,.]* en|Ayuntamiento de) "
                             r"(?!Marbella|M[aá]laga)[A-ZÁÉÍÓÚ][\wáéíóúñ]+", re.I)
 
@@ -216,6 +221,11 @@ def prensa_general(corte):
     return out
 
 
+def boja_relevante(resumen):
+    tema = NOMBRE_CONSEJERIA.sub("", resumen)
+    return bool(BOJA_TURISMO.search(tema)) and not BOJA_RUIDO.search(resumen) and not OTRA_PROVINCIA.search(resumen)
+
+
 def boja(corte, hoy):
     out, pagina = [], 1
     desde = corte.date().isoformat()
@@ -229,7 +239,7 @@ def boja(corte, hoy):
             # Local»: el organismo no sirve de filtro, hay que mirar el texto
             if seccion.startswith("2."):          # nombramientos y personal
                 continue
-            if not BOJA_TURISMO.search(resumen) or BOJA_RUIDO.search(resumen) or OTRA_PROVINCIA.search(resumen):
+            if not boja_relevante(resumen):
                 continue
             partes = (r.get("id") or "").split(".")   # disposition.AAAA.NNN.X
             url = (f"https://www.juntadeandalucia.es/boja/{partes[1]}/{partes[2]}/{partes[3]}"
@@ -289,7 +299,9 @@ def main():
     if os.path.exists(SALIDA):
         with open(SALIDA, encoding="utf-8") as f:
             previas = json.load(f).get("items", [])
-    previas = [i for i in previas if i["fecha"] >= corte.isoformat()]
+    # Fuera lo caducado y lo que ya no pasa los filtros (si se afinan, se aplican a lo guardado)
+    previas = [i for i in previas if i["fecha"] >= corte.isoformat()
+               and (i["tipo"] != "boja" or boja_relevante(i["titulo"]))]
     # Las del Ayuntamiento sin delegación se vuelven a leer (fallo puntual de la web)
     conocidas = {i["url"] for i in previas if i["tipo"] != "ayuntamiento" or i.get("delegacion")}
 
