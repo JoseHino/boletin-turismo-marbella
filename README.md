@@ -51,3 +51,54 @@ borrador a Make) e `indice.yml` (al publicar un número).
    - **Correcciones** (aunque diga OK) → se aplican y le llega la versión siguiente.
    - **Ambigua**, de otra persona o sobre una versión antigua → no se publica
      nada y se avisa al equipo técnico.
+
+## Make
+
+Un único escenario («Boletín Turismo Marbella») con un buzón de correo
+(mailhook) como disparador: así ocupa un solo hueco de escenario activo y solo
+gasta operaciones cuando llega un correo (≈16 por borrador, ≈10 por respuesta).
+
+- **Módulo 2, CONFIGURACIÓN**: `modo` (`prueba` sube los números como
+  `AAAA-MM-prueba-….html`, que la portada oculta, y avisa en el pie), `directora`,
+  `editores` (quién puede pedir GENERAR), `avisos` (equipo técnico), `buzon`,
+  `web`, `repo`, `remitente`, `remitente_nombre` y `lista_brevo`.
+- **Almacén de datos** «Boletín Turismo Marbella»: un registro por número con la
+  versión, el estado (`pendiente` / `publicado`), el Markdown, el HTML y el historial.
+- **Conexiones**: OpenAI (modelo `gpt-5.6-terra`), Gmail (envía los borradores;
+  con Gmail personal hay que reautorizar cada 6 meses), Brevo y una clave de
+  GitHub (token de grano fino con *Contents: read and write* solo en este
+  repositorio, guardada como «API Key Auth»: clave `Bearer <token>`, cabecera
+  `Authorization`).
+- Lecciones: en las fórmulas de Make las expresiones regulares van **entre
+  comillas** (`"/<h2/g"`); sin comillas no hacen nada y no dan error. El
+  procesamiento secuencial está desactivado a propósito: con él, un fallo
+  dejaba el escenario en espera hasta borrar la ejecución incompleta.
+
+### Probarlo
+
+1. Manda un correo al buzón con el asunto `[Boletín Turismo Marbella] GENERAR 2026-10`
+   (el cuerpo son las notas para la IA).
+2. Llega el borrador a la dirección de `directora`. Responde con correcciones
+   y después con «OK».
+3. La dirección de `directora` debe ser un buzón distinto del Gmail que envía:
+   Gmail, al responder a un correo propio, contesta a los destinatarios y no
+   al Reply-To.
+
+## Pasar a la cuenta de Make de Turismo
+
+1. La Delegación abre su cuenta de Make (zona UE) e invita como administrador
+   a quien lo mantenga.
+2. Importar el escenario (Make → Escenarios → Importar blueprint) y crear:
+   buzón nuevo, almacén de datos con la misma estructura y las conexiones.
+3. Cambiar el módulo 2: `modo` = `produccion`, correo real de la directora,
+   buzón nuevo, remitente @marbella.es y lista real de Brevo.
+4. Brevo de la Delegación: verificar el remitente y pedir a Informática los
+   registros DNS de Brevo (DKIM y código de verificación). marbella.es tiene
+   DMARC `p=quarantine` con alineación estricta: sin ellos, los envíos
+   acabarían en spam.
+5. Formulario de suscripción de Brevo con doble confirmación → su enlace en
+   `BREVO_FORM` de `index.html`; la página de privacidad del Ayuntamiento en
+   `PRIVACIDAD`. Que lo revise el Delegado de Protección de Datos (alta de la
+   actividad de tratamiento).
+6. GitHub: variables `MAILHOOK` y `REMITENTE` y secreto `BREVO_API_KEY` en el
+   repositorio para que la Action del día 9 pida el borrador sola.
