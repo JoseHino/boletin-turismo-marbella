@@ -3,92 +3,186 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boletín profesional · Turismo de Marbella</title>
-<meta name="description" content="Datos, noticias y oportunidades para el sector turístico de Marbella. Suscripción y números publicados.">
+<title>Boletín profesional · Turismo</title>
+<meta name="description" content="Datos, noticias y oportunidades para el sector turístico, cada mes en tu correo. Suscripción y números publicados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --azul:#0B2F4E; --turquesa:#0E7C86; --coral:#C2502F; --arena:#F6F1EA;
-    --texto:#24323F; --gris:#5B6B7A; --linea:#E3E8EC; --tarjeta:#FFFFFF;
+    --marino:#0B2545; --azul:#1A5FB4; --azul-osc:#134A8E; --cielo:#EAF2FC; --oro:#E2A93B;
+    --texto:#1C2B3A; --gris:#5E6B7A; --linea:#E1E8F0; --fondo:#F5F8FC; --blanco:#FFFFFF;
   }
   *{box-sizing:border-box}
   html,body{margin:0}
-  body{background:var(--arena);color:var(--texto);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-  a{color:var(--turquesa)}
-  .envoltura{max-width:980px;margin:0 auto;padding:0 16px}
-  header{background:var(--azul);color:#fff;padding:40px 0 34px}
-  .antetitulo{font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#7FD1D7}
-  h1{font:700 clamp(30px,5vw,44px)/1.15 Georgia,"Times New Roman",serif;margin:10px 0 8px}
-  header p{margin:0;color:#C9D6E2;max-width:620px}
-  main{padding:28px 0 40px}
-  .rejilla{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px;align-items:start}
-  @media (max-width:760px){.rejilla{grid-template-columns:1fr}}
-  .caja{background:var(--tarjeta);border-radius:14px;padding:22px 22px 18px;box-shadow:0 1px 2px rgba(11,47,78,.06)}
-  h2{font:700 21px/1.3 Georgia,"Times New Roman",serif;color:var(--azul);margin:0 0 6px}
-  .sub{color:var(--gris);font-size:14px;margin:0 0 16px}
-  .numero{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--linea);padding:14px 2px}
-  .numero:first-of-type{border-top:0}
-  .numero:hover .titulo{color:var(--turquesa)}
-  .meta{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
-  .titulo{font-weight:700;color:var(--azul);margin:2px 0 3px}
+  body{background:var(--fondo);color:var(--texto);font:16px/1.6 Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--azul)}
+  .envoltura{max-width:1080px;margin:0 auto;padding:0 20px}
+  svg{display:block}
+
+  /* Barra superior */
+  .barra{background:var(--marino);color:#fff}
+  .barra .envoltura{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.02em;color:#fff;text-decoration:none}
+  .marca small{display:block;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9FB6D3}
+  .barra .enlace{color:#fff;text-decoration:none;font-weight:600;font-size:14px;border:1px solid rgba(255,255,255,.35);padding:8px 16px;border-radius:999px}
+  .barra .enlace:hover{background:rgba(255,255,255,.1)}
+
+  /* Portada */
+  .portada{background:linear-gradient(135deg,var(--marino) 0%,#123A6B 55%,var(--azul) 100%);color:#fff;position:relative;overflow:hidden}
+  .portada::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(226,169,59,.28),rgba(226,169,59,0) 70%)}
+  .portada .envoltura{position:relative;z-index:1;padding-top:64px;padding-bottom:72px}
+  .etiqueta{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--oro)}
+  .etiqueta::before{content:"";width:22px;height:2px;background:var(--oro)}
+  h1{font-weight:800;font-size:clamp(30px,5vw,48px);line-height:1.12;letter-spacing:-.01em;margin:16px 0 16px;max-width:760px}
+  .portada p{margin:0;color:#C9D8EC;font-size:18px;max-width:620px}
+  .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .boton{display:inline-flex;align-items:center;gap:8px;background:var(--oro);color:var(--marino);text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:10px;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+  .boton:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.18)}
+  .boton.sec{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+  .boton.sec:hover{background:rgba(255,255,255,.08);box-shadow:none}
+  .sellos{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;font-size:14px;color:#C9D8EC}
+  .sellos span{display:inline-flex;align-items:center;gap:8px}
+
+  /* Ventajas */
+  .ventajas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:-40px;position:relative;z-index:2}
+  .ventaja{background:var(--blanco);border-radius:14px;padding:22px 22px 20px;box-shadow:0 10px 30px rgba(11,37,69,.08);border:1px solid var(--linea)}
+  .icono{width:44px;height:44px;border-radius:12px;background:var(--cielo);color:var(--azul);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .ventaja h3{margin:0 0 6px;font-size:16px;font-weight:700;color:var(--marino)}
+  .ventaja p{margin:0;font-size:14px;color:var(--gris)}
+
+  /* Cuerpo */
+  main.envoltura{padding-top:40px;padding-bottom:56px}
+  .rejilla{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:start}
+  .caja{background:var(--blanco);border-radius:16px;padding:28px;border:1px solid var(--linea);box-shadow:0 1px 3px rgba(11,37,69,.04)}
+  h2{font-weight:700;font-size:21px;color:var(--marino);margin:0 0 4px}
+  .sub{color:var(--gris);font-size:14px;margin:0 0 18px}
+  .numero{display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;border-top:1px solid var(--linea);padding:16px 4px}
+  .numero:first-of-type{border-top:0;padding-top:4px}
+  .numero:hover .titulo{color:var(--azul)}
+  .fecha-n{flex:none;width:58px;text-align:center;background:var(--cielo);border-radius:10px;padding:8px 0;color:var(--azul);font-weight:700;font-size:12px;line-height:1.3;text-transform:uppercase}
+  .fecha-n b{display:block;font-size:20px;color:var(--marino)}
+  .meta{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris);font-weight:600}
+  .titulo{font-weight:700;color:var(--marino);margin:2px 0 3px;transition:color .15s}
   .resumen{font-size:14px;color:var(--gris);margin:0}
-  .prueba{display:inline-block;margin-left:6px;padding:0 6px;border-radius:5px;background:#FBE9E3;color:var(--coral);font-size:11px}
-  .vacio{color:var(--gris);font-size:15px;padding:8px 0}
-  .lista{list-style:none;padding:0;margin:0 0 16px}
-  .lista li{padding-left:22px;position:relative;margin:0 0 8px;font-size:15px}
-  .lista li::before{content:"";position:absolute;left:4px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--coral)}
-  .boton{display:inline-block;background:var(--turquesa);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px}
-  .boton:hover{background:#0B6870}
-  .estado{border-radius:12px;padding:14px 18px;margin:22px 0;font-size:15px}
-  .estado strong{display:block;color:var(--azul);margin-bottom:2px}
-  .estado.pendiente{background:#FFF4DE;border:1px solid #E9B44C}
-  .estado.ok{background:#E3F4F2;border:1px solid #8FCFCB}
-  .aviso{background:#F3F6F8;border-radius:10px;padding:12px 14px;font-size:14px;color:var(--gris)}
-  .legal{font-size:12px;line-height:1.55;color:var(--gris);margin-top:16px;border-top:1px solid var(--linea);padding-top:12px}
-  .legal p{margin:0 0 6px}
-  footer{font-size:13px;color:var(--gris);padding:0 0 34px}
-  /* Para incrustarlo en la web de Turismo: ?embed=1 quita cabecera y pie */
-  body.embed header, body.embed footer{display:none}
-  body.embed main{padding-top:4px}
+  .prueba{display:inline-block;margin-left:6px;padding:0 6px;border-radius:5px;background:#FDF1DC;color:#9A6A10;font-size:11px}
+  .vacio{display:flex;align-items:center;gap:14px;color:var(--gris);font-size:15px;padding:18px;border:1px dashed var(--linea);border-radius:12px}
+
+  .susc{position:sticky;top:20px;border-top:4px solid var(--oro)}
+  .lista{list-style:none;padding:0;margin:4px 0 22px}
+  .lista li{display:flex;gap:10px;align-items:flex-start;margin:0 0 10px;font-size:15px}
+  .lista svg{flex:none;margin-top:3px;color:var(--azul)}
+  .susc .boton{width:100%;justify-content:center;background:var(--azul);color:#fff}
+  .susc .boton:hover{background:var(--azul-osc)}
+  .nota{font-size:12px;color:var(--gris);text-align:center;margin:10px 0 0}
+  .aviso{background:var(--cielo);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--gris)}
+  .legal{font-size:11.5px;line-height:1.55;color:var(--gris);margin-top:20px;border-top:1px solid var(--linea);padding-top:14px}
+  .legal p{margin:0}
+
+  .estado{display:flex;gap:12px;align-items:flex-start;border-radius:12px;padding:16px 18px;margin:0 0 24px;font-size:15px}
+  .estado strong{display:block;color:var(--marino)}
+  .estado.pendiente{background:#FDF4E2;border:1px solid #EBC67A}
+  .estado.ok{background:#E6F4EC;border:1px solid #9ACFB0}
+  .estado svg{flex:none;margin-top:2px}
+
+  footer{background:var(--marino);color:#9FB6D3;font-size:13px}
+  footer .envoltura{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-top:24px;padding-bottom:24px}
+
+  @media (max-width:860px){
+    .ventajas{grid-template-columns:1fr;margin-top:-28px}
+    .rejilla{grid-template-columns:1fr}
+    .susc{position:static}
+    .portada .envoltura{padding-top:44px;padding-bottom:60px}
+    .barra .enlace{display:none}
+  }
+  /* ?embed=1: sin barra, portada ni pie, para incrustarlo con un iframe */
+  body.embed .barra, body.embed .portada, body.embed .ventajas, body.embed footer{display:none}
+  body.embed main.envoltura{padding-top:4px}
   body.embed{background:transparent}
 </style>
 </head>
 <body>
-<header>
+
+<div class="barra">
   <div class="envoltura">
-    <div class="antetitulo">Turismo · Ayuntamiento de Marbella</div>
-    <h1>Boletín profesional</h1>
-    <p>Datos, noticias y oportunidades para el sector turístico de Marbella, cada mes en tu correo.</p>
+    <a class="marca" href="./">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1A5FB4"/><circle cx="22" cy="12" r="5" fill="#E2A93B"/><path d="M5 22c3-2.5 6-2.5 9 0s6 2.5 9 0 4.5-2.2 6-1.2V28H5z" fill="#fff"/></svg>
+      <span>Turismo<small>Ayuntamiento</small></span>
+    </a>
+    <a class="enlace" href="#suscripcion">Suscribirse</a>
   </div>
-</header>
+</div>
+
+<section class="portada">
+  <div class="envoltura">
+    <div class="etiqueta">Boletín profesional</div>
+    <h1>Datos, noticias y oportunidades para el sector turístico</h1>
+    <p>Cada mes, en tu correo: las cifras clave del destino, la actualidad del sector y la agenda profesional, en una lectura de cinco minutos.</p>
+    <div class="acciones">
+      <a class="boton" id="cta-portada" href="#suscripcion">
+        Suscribirme gratis
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="boton sec" href="#numeros-publicados">Ver números publicados</a>
+    </div>
+    <div class="sellos">
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Un envío al mes</span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Fuentes oficiales</span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Baja en un clic</span>
+    </div>
+  </div>
+</section>
+
+<div class="envoltura">
+  <div class="ventajas">
+    <div class="ventaja">
+      <div class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+      <h3>Las cifras del mes</h3>
+      <p>Ocupación, tarifas, pernoctaciones y mercados emisores, con su variación interanual.</p>
+    </div>
+    <div class="ventaja">
+      <div class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z"/><path d="M18 8h2v10a2 2 0 0 1-2 2"/><path d="M8 8h6M8 12h6M8 16h4"/></svg></div>
+      <h3>Actualidad del sector</h3>
+      <p>Lo más relevante de la Delegación de Turismo y de la prensa especializada.</p>
+    </div>
+    <div class="ventaja">
+      <div class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <h3>Agenda y ayudas</h3>
+      <p>Ferias, eventos, convocatorias, normativa y formación para profesionales.</p>
+    </div>
+  </div>
+</div>
 
 <main class="envoltura">
   <div id="estado" role="status"></div>
   <div class="rejilla">
-    <section class="caja" aria-labelledby="t-numeros">
+    <section class="caja" id="numeros-publicados" aria-labelledby="t-numeros">
       <h2 id="t-numeros">Números publicados</h2>
       <p class="sub">Todos los boletines enviados, también para consultarlos sin suscribirse.</p>
       <div id="numeros"><div class="vacio">Cargando…</div></div>
     </section>
 
-    <section class="caja" id="suscripcion" aria-labelledby="t-susc">
+    <section class="caja susc" id="suscripcion" aria-labelledby="t-susc">
       <h2 id="t-susc">Suscríbete</h2>
-      <p class="sub">Para empresas y profesionales del turismo de Marbella.</p>
+      <p class="sub">Para empresas y profesionales del turismo.</p>
       <ul class="lista">
-        <li>Las cifras del mes del Observatorio Turístico: ocupación, tarifas y mercados.</li>
-        <li>Actualidad de la Delegación de Turismo y del sector.</li>
-        <li>Agenda, ferias, ayudas y formación.</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gratuito y sin compromiso</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Un único correo al mes</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Datos de fuentes oficiales</li>
       </ul>
       <div id="formulario"></div>
       <div class="legal">
-        <p><strong>Protección de datos.</strong> Responsable: Ayuntamiento de Marbella (Delegación de Turismo). Finalidad: enviarte el boletín profesional. Legitimación: tu consentimiento, que puedes retirar en cualquier momento con el enlace de baja de cada envío. Destinatarios: Brevo (Sendinblue SAS, Unión Europea), como encargado del tratamiento. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad ante el Ayuntamiento de Marbella<span id="privacidad"></span>.</p>
+        <p><strong>Protección de datos.</strong> Responsable: Ayuntamiento (Delegación de Turismo). Finalidad: enviarte el boletín profesional. Legitimación: tu consentimiento, que puedes retirar en cualquier momento con el enlace de baja de cada envío. Destinatarios: Brevo (Sendinblue SAS, Unión Europea), como encargado del tratamiento. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad ante el Ayuntamiento<span id="privacidad"></span>.</p>
       </div>
     </section>
   </div>
 </main>
 
-<footer class="envoltura">
-  Delegación de Turismo · Ayuntamiento de Marbella ·
-  <a href="https://josehino.github.io/observatorio-turistico-marbella/">Observatorio Turístico de Marbella</a>
+<footer>
+  <div class="envoltura">
+    <span>Delegación de Turismo · Ayuntamiento</span>
+    <span>Boletín profesional del sector turístico</span>
+  </div>
 </footer>
 
 <script>
@@ -105,29 +199,41 @@ const verPruebas = q.get("pruebas") === "1";
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
 document.getElementById("formulario").innerHTML = BREVO_FORM
-  ? `<a class="boton" href="${esc(BREVO_FORM)}" target="_blank" rel="noopener">Quiero recibir el boletín</a>`
-  : `<div class="aviso">La suscripción se abrirá en cuanto esté activo el envío desde Brevo.</div>`;
+  ? `<a class="boton" href="${esc(BREVO_FORM)}" target="_blank" rel="noopener">Quiero recibir el boletín</a><p class="nota">Te pediremos confirmar tu correo.</p>`
+  : `<div class="aviso">La suscripción se abrirá en cuanto esté activo el envío.</div>`;
+if (PRIVACIDAD) document.getElementById("privacidad").innerHTML = `: <a href="${esc(PRIVACIDAD)}">más información</a>`;
+// El botón de la portada lleva directamente al formulario
+if (BREVO_FORM) { const c = document.getElementById("cta-portada"); c.href = BREVO_FORM; c.target = "_blank"; c.rel = "noopener"; }
+
 // Brevo devuelve aquí al suscriptor: ?suscripcion=pendiente (tras el formulario) u ok (tras confirmar)
+const ICONO_CORREO = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B07A12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`;
+const ICONO_OK = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F8A4C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>`;
 const ESTADOS = {
-  pendiente: ["pendiente", "Revisa tu correo", "Te hemos enviado un mensaje con un enlace para confirmar tu suscripción. Si no lo ves, mira en la carpeta de spam o promociones."],
-  ok: ["ok", "¡Suscripción confirmada!", "Recibirás el próximo boletín en tu correo. Mientras tanto, puedes consultar los números ya publicados."]
+  pendiente: ["pendiente", ICONO_CORREO, "Revisa tu correo", "Te hemos enviado un mensaje con un enlace para confirmar tu suscripción. Si no lo ves, mira en la carpeta de spam o promociones."],
+  ok: ["ok", ICONO_OK, "Suscripción confirmada", "Recibirás el próximo boletín en tu correo. Mientras tanto, puedes consultar los números ya publicados."]
 };
 const est = ESTADOS[q.get("suscripcion")];
-if (est) document.getElementById("estado").innerHTML = `<div class="estado ${est[0]}"><strong>${est[1]}</strong>${est[2]}</div>`;
-if (PRIVACIDAD) document.getElementById("privacidad").innerHTML = `: <a href="${esc(PRIVACIDAD)}">más información</a>`;
+if (est) document.getElementById("estado").innerHTML = `<div class="estado ${est[0]}">${est[1]}<div><strong>${est[2]}</strong>${est[3]}</div></div>`;
 
+const MESES = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
 fetch("numeros/index.json", {cache: "no-store"})
   .then(r => r.ok ? r.json() : [])
   .then(lista => {
     const n = (lista || []).filter(x => verPruebas || !x.prueba);
     const caja = document.getElementById("numeros");
-    if (!n.length) { caja.innerHTML = `<div class="vacio">Aún no hay números publicados.</div>`; return; }
-    caja.innerHTML = n.map(x => `
+    if (!n.length) { caja.innerHTML = `<div class="vacio"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>El primer número se publicará muy pronto.</div>`; return; }
+    caja.innerHTML = n.map(x => {
+      const [a, m] = String(x.numero || "").split("-");
+      return `
       <a class="numero" href="numeros/${encodeURIComponent(x.archivo)}">
-        <div class="meta">Nº ${esc(x.numero)} · ${esc(x.fecha)}${x.prueba ? '<span class="prueba">prueba</span>' : ""}</div>
-        <div class="titulo">${esc(x.asunto)}</div>
-        <p class="resumen">${esc(x.resumen)}</p>
-      </a>`).join("");
+        <div class="fecha-n">${esc(MESES[(+m || 1) - 1])}<b>${esc((a || "").slice(2))}</b></div>
+        <div>
+          <div class="meta">Nº ${esc(x.numero)} · ${esc(x.fecha)}${x.prueba ? '<span class="prueba">prueba</span>' : ""}</div>
+          <div class="titulo">${esc(x.asunto)}</div>
+          <p class="resumen">${esc(x.resumen)}</p>
+        </div>
+      </a>`;
+    }).join("");
   })
   .catch(() => { document.getElementById("numeros").innerHTML = `<div class="vacio">No se han podido cargar los números.</div>`; })
   .finally(avisarAltura);
