@@ -38,6 +38,10 @@
   .lista li::before{content:"";position:absolute;left:4px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--coral)}
   .boton{display:inline-block;background:var(--turquesa);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px}
   .boton:hover{background:#0B6870}
+  .estado{border-radius:12px;padding:14px 18px;margin:22px 0;font-size:15px}
+  .estado strong{display:block;color:var(--azul);margin-bottom:2px}
+  .estado.pendiente{background:#FFF4DE;border:1px solid #E9B44C}
+  .estado.ok{background:#E3F4F2;border:1px solid #8FCFCB}
   .aviso{background:#F3F6F8;border-radius:10px;padding:12px 14px;font-size:14px;color:var(--gris)}
   .legal{font-size:12px;line-height:1.55;color:var(--gris);margin-top:16px;border-top:1px solid var(--linea);padding-top:12px}
   .legal p{margin:0 0 6px}
@@ -58,6 +62,7 @@
 </header>
 
 <main class="envoltura">
+  <div id="estado" role="status"></div>
   <div class="rejilla">
     <section class="caja" aria-labelledby="t-numeros">
       <h2 id="t-numeros">Números publicados</h2>
@@ -90,7 +95,7 @@
 // ── Configuración ─────────────────────────────────────────────────────────
 // BREVO_FORM: enlace del formulario de Brevo (Contactos > Formularios > Compartir).
 // PRIVACIDAD: página de protección de datos del Ayuntamiento (la indica su DPD).
-const BREVO_FORM = "";
+const BREVO_FORM = "https://24245cf8.sibforms.com/serve/MUIFAEFtKmH-s7Fij0KWMT-QMYACtTu6GYxbVDVnlNfmWlSywJm_sW8mKSiHrkWnpWUIMf3P_f6QZzi536zLV64Ll-tOy5_Czm8ryS1IYLQK3-rM-7hNm8KUpIbUkLcrkr5tSw2MVu31TYdwM7fvGi7eAPUqHfImfUy_4xXDIPfybaBA8r6FI8X4othZvjpOP77sEbeIApPf32EkLw==";
 const PRIVACIDAD = "";
 
 const q = new URLSearchParams(location.search);
@@ -102,6 +107,13 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 document.getElementById("formulario").innerHTML = BREVO_FORM
   ? `<a class="boton" href="${esc(BREVO_FORM)}" target="_blank" rel="noopener">Quiero recibir el boletín</a>`
   : `<div class="aviso">La suscripción se abrirá en cuanto esté activo el envío desde Brevo.</div>`;
+// Brevo devuelve aquí al suscriptor: ?suscripcion=pendiente (tras el formulario) u ok (tras confirmar)
+const ESTADOS = {
+  pendiente: ["pendiente", "Revisa tu correo", "Te hemos enviado un mensaje con un enlace para confirmar tu suscripción. Si no lo ves, mira en la carpeta de spam o promociones."],
+  ok: ["ok", "¡Suscripción confirmada!", "Recibirás el próximo boletín en tu correo. Mientras tanto, puedes consultar los números ya publicados."]
+};
+const est = ESTADOS[q.get("suscripcion")];
+if (est) document.getElementById("estado").innerHTML = `<div class="estado ${est[0]}"><strong>${est[1]}</strong>${est[2]}</div>`;
 if (PRIVACIDAD) document.getElementById("privacidad").innerHTML = `: <a href="${esc(PRIVACIDAD)}">más información</a>`;
 
 fetch("numeros/index.json", {cache: "no-store"})
