@@ -28,7 +28,7 @@ import urllib.request
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SALIDA = os.path.join(RAIZ, "datos", "kpis.json")
 
-OBSERVATORIO = "https://josehino.github.io/observatorio-turistico-marbella/"
+OBSERVATORIO = "https://ammaconsulting.github.io/observatorio-turistico-marbella/"
 INE = "https://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/"
 EUROSTAT = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/avia_paoa"
             "?format=JSON&lang=en&freq=M&unit=PAS&tra_meas=PAS_CRD&rep_airp=ES_LEMG"
